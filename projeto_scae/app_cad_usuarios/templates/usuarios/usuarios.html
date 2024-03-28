@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alunos Cadastrados</title>
+<style>
+    /* Estilos CSS básicos */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+    }
+    header {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+    nav {
+        background-color: #666;
+        padding: 10px;
+        text-align: center;
+    }
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+    .navbar {
+        overflow: hidden;
+        background-color: #333;
+    }
+    .navbar a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+    }
+    .navbar a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+    .container {
+        width: 80%;
+        margin: 0 auto; /* Isso centraliza a div horizontalmente */
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .container h1 {
+        text-align: center;
+    }
+    .container table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+    .container th, .container td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+    .container th {
+        background-color: #333;
+        color: #fff;
+    }
+    .container tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Alunos Cadastrados</h1>
+</header>
+
+<div class="navbar">
+    <a href="#">Página Inicial</a>
+    <a href="#">Sobre</a>
+    <a href="#">Contato</a>
+</div>
+
+<div class="container">
+    <h1>Cadastro de Alunos</h1>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>nome</th>
+            <th>estágio</th>
+        </tr>
+           {% for usuario in usuarios %}
+        <tr>
+            <td>{{usuario.id_usuario}}</td>
+            <td>{{usuario.nome}}</td>
+            <td>{{usuario.estagio}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<footer>
+    <p>&copy; 2024 Julian Bahiano de Ilhéus. Todos os direitos reservados.</p>
+</footer>
+
+</body>
+</html>
